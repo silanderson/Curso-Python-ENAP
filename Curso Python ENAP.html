@@ -5,5 +5,511 @@
     </head>
     <body>
         <h1>Curso Python ENAP<h1>
+            06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 1/6
+Objetivos de aprendizado:
+Definir e modificar variáveis de vários tipos de dados. Converter entre tipos de dados. Compreender as características e usos de cada
+operação e a saída (output) correspondente. Compreender e corrigir estas declarações para verificar as condições. 1.1: Variáveis 1.1.1:
+Atribuição de Variáveis¶ As variáveis são as mesmas que as variáveis em matemática, exceto que variáveis matemáticas são muitas vezes
+letras, mas variáveis de programação podem ser palavras.
+Variáveis: um conjunto que contém algumas informações.
+Nota sobre a declaração de variáveis:
+Case-sensitive (ou seja, caracteres em caixa alta ou baixa são tratados como diferentes) DEVE começar com uma letra ou um sublinhado;
+NÃO PODE começar com números. NÃO PODE ser o mesmo nome que as palavras-chave Python (por exemplo, class, finally, etc.) NÃO
+especificar o tipo de informação armazenada na variável. (Consulte os seguintes códigos para um exemplo.)
+# Exemplos de declarações de variáveis
+width = 10
+# Note que o "H" está em letra maiúscula
+Height = 5
+area = 0
+width
+10
+Height
+5
+---------------------------------------------------------------------------
+NameError Traceback (most recent call last)
+<ipython-input-7-5107fc8585e9> in <module>
+----> 1 height
+NameError: name 'height' is not defined
+SEARCH STACK OVERFLOW
+height
+# Usando uma palavra-chave python como um nome variável
+# ERROR CODE: sintaxe inválida
+global = 1
+global
+# Mais declarações para diferentes tipos de variáveis
+# armazenando uma string
+helloMessage = "Hello World!"
+first_name = "John"
+# armazenando um caractere
+character_example = 'a'
+# armazenando um float
+_newFloat = 1.0
+# armazenando um valor booleano
+bool_Condition = True
+'Hello World!'
+helloMessage
+'a'
+character_example
+_newFloat
+1 0
+06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 2/6
+bool_Condition
+True
+1.1.2: Conversor de Tipo A partir do tópico 1.1.1, aprendemos como declarar corretamente um nome variável para diferentes tipos de dados.Neste tópico, vamos explorar como "computar" ou converter o tipo dos dados entre si.
+Uma função útil: type() define o tipo dos dados
+# A partir da declaração acima, width = 10 e 10 é
+int, então esperamos que a função retorne int
+type
+(
+width
+)
+int
+type
+(
+helloMessage
+)
+str
+type
+(
+bool_Condition
+)
+bool
+# Vamos computar um float em um int e vice-versa
+# Computaremos o tipo e depois o armazenaremos em
+uma nova variável
+width_float =
+float
+(
+width
+)
+type
+(
+width_float
+)
+float
+# Computar de float para int
+width_int =
+int
+(
+width_float
+)
+type
+(
+width_int
+)
+int
+# Computar entre string e int
+# Lembrar que width armazena um int
+# Converter width para string
+width_string =
+str
+(
+width
+)
+type
+(
+width_string
+)
+str
+# Converter width_string de volta a um int
+type
+(
+int
+(
+width_string
+))
+1.2: Operações 1.1.1 Operadores Aritméticos
+# Operações matemáticas básicas com Números
+# Adição
+print
+(
+5
++
+23
+)
+# Subtração
+print
+(
+100-25
+)
+# Multiplicação
+print
+(
+5
+*
+10
+)
+# Potência/Exponente
+# o operador ** é equivalente ao expoente
+print
+(
+5
+**
+2
+)
+# 5*5 = 5^2 = 5**2
+print
+(
+5
+*
+5
+)
+# Divisão (float)
+# Retornar o valor decimal real da divisão
+print
+(
+36
+/
+4
+)
+print
+(
+10
+/
+3
+)
+06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 3/6
+# Divisão (int)
+# Retornar um int. Se o quociente real for um
+valor decimal, apenas um número inteiro irá
+retornar
+print
+(
+10
+//
+3
+)
+print
+(
+19
+//
+6
+)
+# Divisão Modular: retornar o restante da divisão
+print
+(
+10
+%
+3
+)
+28755025259.03.3333333333333335331
+# Operações com Strings e Caracteres
+print
+(
+"foo"
+*
+5
+)
+print
+(
+'x'
+*
+3
+)
+foofoofoofoofooxxx
+---------------------------------------------------------------------------
+NameError Traceback (most recent call last)
+<ipython-input-27-1ddc645d6d26> in <module>
+1 # ERRO: o compilador trata x como uma variável, não como um caractere
+----> 2 print(
+x*3)
+NameError: name 'x' is not defined
+SEARCH STACK OVERFLOW
+# ERRO: o compilador trata x como uma variável,
+não como um caractere
+print
+(
+x*
+3
+)
+---------------------------------------------------------------------------
+TypeError Traceback (most recent call last)
+<ipython-input-28-0b933388a5bc> in <module>
+1 # ERRO: não pode concatenar um int com uma string --> necessidade de
+computar int com uma string
+----> 2
+print("hello" + 5)
+TypeError: can only concatenate str (not "int") to str
+SEARCH STACK OVERFLOW
+# ERRO: não pode concatenar um int com uma string
+--> necessidade de computar int com uma string
+print
+(
+"hello"
++
+5
+)
+# Fix
+print
+(
+"hello "
++
+str
+(
+5
+))
+hello 5
+# Adição de String = concatenação
+print
+(
+"hello "
++
+"world"
+)
+hello world
+1.1.2: Outros Operadores
+# Comparadores: retornar valor booleano
+# Igualdade ==
+# Nota: DEVE ser sinais de igual Duplos, um sinal
+de igual único é atribuição
+print
+(
+5
+==
+5.0
+)
+# Maior do que >
+print
+(
+7
+>
+1
+)
+# Menor do que <
+print
+(
+1.5
+<
+90
+)
+# Maior ou igual a >=
+print
+(
+5.0
+>=
+5
+)
+06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 4/6
+print
+(
+5.0
+>=
+4
+)
+print
+(
+5
+>=
+13
+)
+# Menor ou igual a <=
+print
+(
+10
+<=
+10.0
+)
+print
+(
+10
+<=
+20
+)
+print
+(
+8
+<=
+3
+)
+TrueTrueTrueTrueTrueFalseTrueTrueFalse
+# Comparadores em Strings
+print
+(
+"hello"
+<
+"world"
+)
+print
+(
+"hello"
+==
+"world"
+)
+print
+(
+"hello"
+>
+"world"
+)
+print
+(
+"hello"
+==
+"hello"
+)
+print
+(
+"cat"
+<
+"dog"
+)
+TrueFalseFalseTrueTrue
+1.3: Declarações Condicionais 1.3.1: Estrutura Condicional If Avisos importantes:
+A ordem das condições importa! Se mais de uma condição estiver satisfeita, então as ações associadas à primeira condição satisfeita serãoexecutadas e saltarão as demais condições e códigos. "elif" = "else if" "elif" expressa o mesmo significado que "else if" Pelo menos umacondição DEVE ser prevista para ambas as cláusulas if e elif, senão ERROR! Os parênteses para if e elif são opcionais. Seu códigofuncionará com ou sem o ().
+x =
+7
+y =
+14
+if
+(
+2
+*x == y
+):
+print
+(
+"y is double of x"
+)
+elif
+(
+x**
+2
+== y
+):
+print
+(
+"y is the squared of x"
+)
+else
+:
+print
+(
+"y is NOT double of x"
+)
+y is double of x
+x =
+7
+y =
+49
+if
+(
+2
+*x == y
+):
+print
+(
+"y is double of x"
+)
+elif
+(
+x**
+2
+== y
+):
+print
+(
+"y is the squared of x"
+)
+else
+:
+print
+(
+"y is NOT related to x"
+)
+y is the squared of x
+x =
+7
+y =
+50
+if
+(
+2
+*x == y
+):
+print
+(
+"y is double of x"
+)
+elif
+(
+x**
+2
+== y
+):
+print
+(
+"y is the squared of x"
+)
+else
+:
+print
+(
+"y is NOT double nor squared of x"
+)
+y is NOT double nor squared of x
+06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 5/6
+1.3.2: Switch Cases O Python NÃO tem uma implementação para os switch cases, mas uma maneira de implementá-lo é com o dicionário,
+uma estrutura de dados que armazena o par de valores chave (Módulo 3).
+As condições switch são armazenadas como chaves no dicionário, e as ações armazenadas como valor. Se houver uma série de ações para
+cada caso, então considere escrever uma função para cada caso e use as chamadas de função como o valor. A condição padrão é listada
+manualmente como um valor chave no get().
+Dial a number1
+'Entered 1'
+def switcher(number):
+# Use dicionário (do Módulo 3) para armazenar switch cases
+# Se não for encontrado, o get() será o valor padrão
+return {
+'0':"Entered 0",
+'1':"Entered 1",
+'2':"Entered 2",
+'3':"Entered 3",
+'4':"Entered 4",
+'5':"Entered 5",
+'6':"Entered 6",
+'7':"Entered 7",
+'8':"Entered 8",
+'9':"Entered 9",
+}.get(number,"Invalid number!")
+# input() lê uma entrado do usuário de stdin
+number = input("Dial a number")
+switcher(number)
+""" EXERCÍCIO: implemente o exemplo de switch case acima usando as condições "if/else"
+Prompt: para cada dígito entre 0-9, o programa imprimirá uma confirmação para o valor inserido ou irá imprimir "invalid inputs" para todos os
+outros números. """
+number = input("Dial a number")
+if number == '0':
+print("Entered 0")
+elif number == '1':
+print("Entered 1")
+elif number == '2':
+print("Entered 2")
+elif number == '3':
+print("Entered 3")
+elif number == '4':
+print("Entered 4")
+elif number == '5':
+print("Entered 5")
+elif number == '6':
+print("Entered 6")
+elif number == '7':
+print("Entered 7")
+elif number == '8':
+print("Entered 8")
+elif number == '9':
+print("Entered 9")
+else:
+print("Invalid number!")
+Dial a number7
+Entered 7
+06/03/2023, 12:06 Módulo 1: Variáveis, Operações, Condições.ipynb - Colaboratory
+https://colab.research.google.com/drive/1XQpmnZXc22OE70zR0Y6iINAFYAAmL_Us#scrollTo=pBFKLP8kUCPQ&printMode=true 6/6
+check
+8s
+conclusão: 11:25
+            
     </body>
 </html>
